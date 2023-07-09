@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "ec711d33-21a0-4635-b4e7-4a43f37838f8",
+		"name": "EnlacesWeb API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27077900",
+		"_collection_link": "https://cloudy-resonance-410372.postman.co/workspace/Enlaces-API~daf2b287-ed95-4a19-9cdf-e9f78531dac8/collection/27077900-ec711d33-21a0-4635-b4e7-4a43f37838f8?action=share&creator=27077900&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"mario\",\r\n    \"email\": \"mario@mario.com\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"pm.globals.set(\"accessToken\", response.accessToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"david@david.com\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJtYXJpbyIsImVtYWlsIjoibWFyaW9AbWFyaW8uY29tIiwiaWF0IjoxNjgzNjQ1MTM0LCJleHAiOjE2ODYyMzcxMzR9.LrY6TLZWTKy2WlTVOqrdVvYAF56xd381iO2PcPr85wQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"david\",\r\n    \"email\": \"david@david.com\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJtYXJpbyIsImVtYWlsIjoibWFyaW9AbWFyaW8uY29tIiwiaWF0IjoxNjgzNjQ1MTM0LCJleHAiOjE2ODYyMzcxMzR9.LrY6TLZWTKy2WlTVOqrdVvYAF56xd381iO2PcPr85wQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"david\",\r\n    \"email\": \"david@david.com\",\r\n    \"password\": \"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProfile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJkYXZpZCIsImVtYWlsIjoiZGF2aWRAZGF2aWQuY29tIiwiaWF0IjoxNjgzNjQ1MjgxLCJleHAiOjE2ODYyMzcyODF9.iEl5fzlaMmlcOowJssEdFUSdhSey6pNTBsev59fLsmk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Links",
+			"item": [
+				{
+					"name": "Link list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb255IiwiZW1haWwiOiJqb25AbWFpbC5jb20iLCJpYXQiOjE2ODczNjc5NjEsImV4cCI6MTY4OTk1OTk2MX0.a2dpJRylPu0cY1vKtcy8hJfo3_rT7Q0gv6gRkCg2RsM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/links/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete linkID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJkYXZpZCIsImVtYWlsIjoiZGF2aWRAZGF2aWQuY29tIiwiaWF0IjoxNjgzNjQ1MjgxLCJleHAiOjE2ODYyMzcyODF9.iEl5fzlaMmlcOowJssEdFUSdhSey6pNTBsev59fLsmk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/links/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create link",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJkYXZpZCIsImVtYWlsIjoiZGF2aWRAZGF2aWQuY29tIiwiaWF0IjoxNjgzNjQ1MjgxLCJleHAiOjE2ODYyMzcyODF9.iEl5fzlaMmlcOowJssEdFUSdhSey6pNTBsev59fLsmk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://youtube.com\",\r\n    \"titulo\": \"Youtube\",\r\n    \"description\": \"Aplicacion para ver videos online\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/links/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LinkById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJwcHBwIiwiZW1haWwiOiJwQHAuY29tIiwiaWF0IjoxNjg4MzE4MzE3LCJleHAiOjE2OTA5MTAzMTd9.dVKXFMgFLWK5_OiwsD15u8iZ7uC01awz3wT3UJtMDe4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/links/pablo/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"pablo",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Link",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNjg4NDk4NTQ5LCJleHAiOjE2OTEwOTA1NDl9.msxPSNBW9nGSQvEbiL9g2DJZJdaL2nsbwLJY0hXkVMM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"www.david.com\",\r\n    \"titulo\": \"david@david.com\",\r\n    \"description\": \"descripcion de prueba con mas de 10 caracteres\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/links/edit/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"edit",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCommentsByLinkId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0IiwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNjg4NDk4NTQ5LCJleHAiOjE2OTEwOTA1NDl9.msxPSNBW9nGSQvEbiL9g2DJZJdaL2nsbwLJY0hXkVMM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/links/comments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJkYXZpZCIsImVtYWlsIjoiZGF2aWRAZGF2aWQuY29tIiwiaWF0IjoxNjgzNjQ1MjgxLCJleHAiOjE2ODYyMzcyODF9.iEl5fzlaMmlcOowJssEdFUSdhSey6pNTBsev59fLsmk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\": \"https://youtube.com\",\r\n    \"titulo\": \"Youtube\",\r\n    \"description\": \"Aplicacion para ver videos online\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/links/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete CommentID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJkYXZpZCIsImVtYWlsIjoiZGF2aWRAZGF2aWQuY29tIiwiaWF0IjoxNjgzNjQ1MjgxLCJleHAiOjE2ODYyMzcyODF9.iEl5fzlaMmlcOowJssEdFUSdhSey6pNTBsev59fLsmk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/links/comments/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"comments",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ratings",
+			"item": [
+				{
+					"name": "Create rating",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwidXNlcm5hbWUiOiJkYXZpZCIsImVtYWlsIjoiZGF2aWRAZGF2aWQuY29tIiwiaWF0IjoxNjgzNjQ1MjgxLCJleHAiOjE2ODYyMzcyODF9.iEl5fzlaMmlcOowJssEdFUSdhSey6pNTBsev59fLsmk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/links/1/ratings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"1",
+								"ratings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Average rating",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJrYXJlbiIsImVtYWlsIjoia2FyZW5Aa2FyZW4uY29tIiwiaWF0IjoxNjgzNjM1ODc3LCJleHAiOjE2ODYyMjc4Nzd9.NTyGWhqgOKZESXUnKAH6UIz73qihWNNLvQD3RQS7C3A",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/links/1/average",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"links",
+								"1",
+								"average"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

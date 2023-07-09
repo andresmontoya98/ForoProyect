@@ -1,0 +1,90 @@
+.comments {
+  margin-top: 20px;
+}
+
+.title {
+  color: #18171c;
+  font-family: "Syne", sans-serif;
+  font-size: 25px;
+}
+
+.form {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  word-break: break-all;
+  padding: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #18171c;
+  color: #fff;
+  font-size: 16px;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #1e6ca0;
+  color: white;
+  border: 1px solid #154666;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.loading {
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid rgba(30, 161, 170, 0.548);
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 5px rgba(11, 88, 102, 0.5);
+  background-color: rgba(15, 180, 192, 0.548) ;
+  margin: 10px;
+}
+
+.icon {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.text {
+  word-break: break-all;
+  font-size: 15px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.delete {
+  font-size: 12px;
+  color: #1e6ca0;
+  cursor: pointer;
+  justify-self: end;
+}
+
+.no-comments {
+  margin-top: 10px;
+  font-style: italic;
+  color: #999;
+}
